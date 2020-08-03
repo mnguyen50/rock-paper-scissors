@@ -5,6 +5,32 @@
 </head>
 <body>
     <script>
+        let result;
+        let choice = ['rock', 'paper', 'scissors'];
+        let randomChoice = Math.floor(Math.random() * choice.length)
+        function computerPlay() {
+            return randomChoice;
+        }
+        function oneRound (playerSelection, computerSelection) {
+            if (playerSelection == 'rock' && computerSelection == 'paper') {
+                result = 'Paper beats Rock... You Lose!';
+            } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+                result = 'Rock beats Scissors... You Win!';
+            } else if (playerSelection == 'paper' && computerSelection == 'rock') {
+                result = 'Paper beats Rock... You Win!';
+            } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+                result = 'Scissors beats Paper... You Lose!';
+            } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+                result = 'Rock beats Scissors... You Lose!';
+            } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+                result = 'Scissors beats Paper... You Win!';
+            } else if (playerSelection == computerSelection) {
+                result = 'It\'s a tie... Go Again!';
+            }
+        }
+        const playerSelection = 'rock'
+        const computerSelection = computerPlay();
+        console.log(oneRound(playerSelection, computerSelection))
 
     </script>
 </body>  
